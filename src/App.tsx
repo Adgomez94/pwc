@@ -1,33 +1,30 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import instance from './boot/axios'
+import MarvelProvider from './store/Marvel/MarvelProvider'
+import { MarvelContext } from './store/Marvel/MarvelContext';
+import { DataApiSerie } from './modules/marvel/types/SeriesInterface';
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const { changeStateMarvel } = useContext( MarvelContext )
+
+  const hola = async() => {
+    const visa = await instance.get<DataApiSerie>('/series?ts=1000&apikey=34080d8aeaf48f227cecab6b02bc64d1&hash=bac2f31d1f10ddc82689625c3e853d1d')
+  }
+
+   
+
+  hola()
+
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <>
+    <header>
+      <h1>Marvel API</h1>
+    </header> 
+    </>
   )
 }
 
