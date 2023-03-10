@@ -20,6 +20,7 @@ export interface DataSerie {
 export interface Serie {
   id:          number;
   title:       string;
+  name:        string;
   description: null;
   resourceURI: string;
   urls:        URL[];

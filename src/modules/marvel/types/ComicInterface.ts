@@ -17,6 +17,7 @@ export interface DataComic {
 }
 
 export interface Comic {
+  name?:           string;
   id:                 number;
   digitalId:          number;
   title:              Title;

@@ -18,6 +18,7 @@ export interface DataCharacter {
 
 export interface Character {
   id:          number;
+  title?:      string;
   name:        string;
   description: string;
   modified:    string;
