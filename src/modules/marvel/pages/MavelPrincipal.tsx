@@ -26,12 +26,15 @@ const MavelPrincipal = () => {
         }
       </div>
 
-      <div className="paginacion">
-          {
-            pagination !== 0 && <div onClick={() => changedPagination('Restar')} > <span>&laquo;</span></div>
-          }
-          <div onClick={() => changedPagination('Suma')}><span>&raquo;</span></div>
-      </div>
+      {
+       marvel.length !== 0 &&  <div  className="paginacion">
+            {
+              pagination !== 0 && <div onClick={() => changedPagination('Restar')} > <span>&laquo;</span></div>
+            }
+            <div onClick={() => changedPagination('Suma')}><span>&raquo;</span></div>
+        </div>
+      }
+
     </div>
   )
 }

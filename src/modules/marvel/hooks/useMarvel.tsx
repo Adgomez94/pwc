@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from 'react';
-import { useLocation, useMatch, useMatches, useNavigation, useRoutes } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { MarvelContext } from '../../../store/Marvel/MarvelContext';
 import services from '../services';
 import { DataApiCharacter } from '../types/CharacterInterface';
@@ -10,7 +10,6 @@ const useMarvel = () => {
 
   const { changeStateMarvel, marvel } = useContext(MarvelContext)
   const location = useLocation()
-  const hola = useMatches()
 
   const [pagination, setPagination] = useState(0)
 
@@ -23,7 +22,6 @@ const useMarvel = () => {
   }, [location])
 
   useEffect(() => {
-    console.log('otro', pagination)
     chooseRequest()
   }, [pagination])
   
